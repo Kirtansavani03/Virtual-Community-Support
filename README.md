@@ -23,11 +23,11 @@
 
 🛠️ Tech Stack
 
-Frontend: Angular  
-Backend: ASP.NET Core Web API  
-Database: PostgreSQL  
-ORM: Entity Framework Core (Code First)  
-Security: JWT Authentication & Authorization  
+- Frontend: Angular  
+- Backend: ASP.NET Core Web API  
+- Database: PostgreSQL  
+- ORM: Entity Framework Core (Code First)  
+- Security: JWT Authentication & Authorization  
 
 🧩 Modules
 
