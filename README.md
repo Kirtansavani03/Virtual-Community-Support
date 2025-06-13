@@ -1,92 +1,154 @@
-🌟 Virtual Community Support
 
-> A full-stack web application to manage and connect users with social service missions.
+# 🌟 Virtual Community Support – Full Stack Web Application
 
-🌐 Overview
+A robust and dynamic platform that enables users to discover, apply for, and manage social missions. Designed with both users and admins in mind, this full-stack project blends powerful technologies into a clean, secure, and scalable solution.
 
-> Virtual Community Support is a robust platform built to enable users to discover, apply for, and track missions based on their skills and interests. Admins can manage missions, themes, users, and applications efficiently using a secured backend.
+---
 
-🚀 Features
+## 🌐 Overview
 
-⭐ User Side
-- 🔐 Secure login with JWT-based authentication
-- 👥 Role-based access: User & Admin
-- 🔍 View and filter missions by themes, skills, or location
-- 📄 Apply to missions and track application history
-- 🧑‍💼 Edit and update personal profile
+**Virtual Community Support** is an end-to-end web application that helps communities connect with volunteering missions.  
+It supports user registration, secure login, mission discovery with filters, and application management.  
+Admins have complete control over mission listings, themes, users, and role-based authorization.
 
-⭐ Admin Side
-- 🧾 User management (Create, Read, Update, Delete)
-- 🎯 Mission CRUD with skills & themes
-- 📦 Application approval and management
-- 🔐 Role-based authorization
+> This project was developed using modern web technologies like Angular, ASP.NET Core, and PostgreSQL following clean architecture principles.
 
-🛠️ Tech Stack
+---
 
-- Frontend: Angular  
-- Backend: ASP.NET Core Web API  
-- Database: PostgreSQL  
-- ORM: Entity Framework Core (Code First)  
-- Security: JWT Authentication & Authorization  
+## 🚀 Core Features
 
-🧩 Modules
+### 👤 User Side
+- 🔐 JWT-based secure authentication  
+- 🔍 Filter & explore missions by theme, skill, or location  
+- 📝 Apply to missions and view application history  
+- 👤 Edit personal profile, upload image  
 
-🔹 User Module
-- Registration & Login
-- Role-based dashboard
-- Mission browsing, filtering, and sorting
-- Profile editing
+### 🛠️ Admin Side
+- 🧾 Full CRUD on missions, themes, skills  
+- 👥 Manage user roles and applications  
+- 🛡️ Role-based access for Admin & User  
+- 📊 Admin dashboard for quick insights  
 
-🔹 Mission Module
-- CRUD operations
-- Assign themes and skills
-- View by status and date
+---
 
-🔹 Application Module
-- Apply to missions
-- Admin can approve or reject
-- Search/filter applications
+## 🧠 Tech Stack
 
-🔹 Authorization
-- JWT token-based login
-- Role-based protected routes
+### 🔹 Frontend
+- Angular 14+  
+- Bootstrap, Angular Forms, Reactive Forms  
+- RxJS, ngx-pagination, ngx-toastr  
 
-📂 Project Structure
+### 🔹 Backend
+- ASP.NET Core Web API  
+- Entity Framework Core (Code First)  
+- PostgreSQL  
+- Swagger for API Documentation  
+- JWT Authentication & Authorization  
 
-Project-mission/  
-├── Mission-frontend/       (Angular App)  
-│   ├── Components/  
-│   ├── Services/  
-│   └── Modules & Routing  
-├── Mission-backend/        (.NET Core API)  
-│   ├── Controllers/  
-│   ├── Models/  
-│   ├── Services/  
-│   ├── Repositories/  
-│   └── DataContext/
+---
 
-⚙️ Installation & Setup
+## 📁 Project Folder Structure
 
-✅ Backend Setup
 ```
+📁 Project-mission  
+├── 📂 Mission-frontend (Angular)  
+│   ├── 📂 app  
+│   │   ├── 📂 components → Login, Register, Profile, Dashboard  
+│   │   ├── 📂 services → API integration, Auth, Missions  
+│   │   ├── 📂 modules → AuthModule, AdminModule, UserModule  
+│   │   ├── 📂 guards → Route guards for role-based access  
+│   │   ├── 📂 interceptors → JWT interceptor for API security  
+│   ├── 📂 assets → Images, logos, styles  
+│   ├── 📂 environments → Development & production configs  
+
+├── 📂 Mission-backend (ASP.NET Core)  
+│   ├── 📂 Controllers → LoginController, MissionController, AdminUserController  
+│   ├── 📂 Models → DTOs, Entity Models  
+│   ├── 📂 Services → Business logic (MissionService, AuthService, etc.)  
+│   ├── 📂 Repositories → DB operations, LINQ queries  
+│   ├── 📂 DataContext → EF DbContext & Seeding  
+│   ├── 📄 Program.cs → App Entry point  
+│   └── 📄 appsettings.json → DB & JWT configuration  
+```
+
+---
+
+## 📡 API Endpoints Overview
+
+### 🔐 Authentication & Authorization
+- `POST /api/Login` → User login with JWT token  
+- `POST /api/Register` → User registration  
+- `GET /api/UserDetail` → Get logged-in user details  
+
+### 🎯 Mission Management
+- `GET /api/Mission` → List all missions  
+- `POST /api/Mission` → Add new mission (Admin only)  
+- `PUT /api/Mission/{id}` → Update mission  
+- `DELETE /api/Mission/{id}` → Delete mission  
+
+### 🏷️ Mission Theme & Skill
+- `GET /api/MissionTheme` → Get all themes  
+- `POST /api/MissionTheme` → Add theme (Admin)  
+- `GET /api/MissionSkill` → Get all skills  
+- `POST /api/MissionSkill` → Add skill (Admin)  
+
+### 📄 Application Management
+- `POST /api/MissionApplication` → Apply for a mission  
+- `GET /api/MissionApplication/User` → Get applied missions (User)  
+- `GET /api/MissionApplication/Admin` → Get all applications (Admin)  
+- `PUT /api/MissionApplication/Approve/{id}` → Approve/Reject application  
+
+### 👥 Admin User Management
+- `GET /api/AdminUser` → List all users  
+- `PUT /api/AdminUser/Role/{id}` → Change user role  
+- `DELETE /api/AdminUser/{id}` → Remove user  
+
+---
+
+## ⚙️ Local Setup Instructions
+
+### 🔧 Backend (.NET Core)
+
+```bash
 cd Mission-backend
 dotnet restore
 dotnet ef database update
 dotnet run
 ```
 
-✅ Frontend Setup
-```
+### 🔧 Frontend (Angular)
+
+```bash
 cd Mission-frontend
 npm install
 ng serve
-```
 
-👨‍💻 Author
+---
 
-Kirtan Savani  
+## 📘 Use Cases
+
+- Volunteer management for NGOs and non-profits  
+- College projects involving social work portals  
+- CSR program management tools  
+- Hackathons & community event platforms  
+
+---
+
+## 👨‍💻 Developed By
+
+**Kirtan Savani**  
 GitHub: [@Kirtansavani03](https://github.com/Kirtansavani03)
 
-📃 License
+---
 
-This project is intended for educational and demonstration purposes only.
+## 📄 License
+
+This project is developed for **educational and demonstration purposes** only.  
+Free to fork and explore for learning.
+
+---
+
+## 🧠 Pro Tip
+
+You can containerize this project using **Docker** and deploy it on **AWS EC2**, **Azure App Service**, or **Heroku** for production use.  
+Need help? Feel free to reach out!
